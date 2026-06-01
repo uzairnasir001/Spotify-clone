@@ -969,19 +969,6 @@ nav {
   font-size: 12px;
 }
 
-.add-btn {
-  margin-left: 10px;
-  background: transparent;
-  border: 1px solid #b3b3b3;
-  color: white;
-
-  width: 22px;
-  height: 22px;
-
-  border-radius: 50%;
-  cursor: pointer;
-}
-
 /* CENTER */
 .player-center {
   width: 50%;
