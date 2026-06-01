@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Spotify Clone</title>
+  </head>
+  <body>
+    <nav>
+      <!-- Spotify Logo -->
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill="#1DB954"
+            d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+          />
+        </svg>
+      </div>
+
+      <!-- Home Button -->
+      <button class="home-btn" aria-label="Home">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M13.5 1.515a3 3 0 0 0-3 0L3 5.845a2 2 0 0 0-1 1.732V21a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6h4v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7.577a2 2 0 0 0-1-1.732l-7.5-4.33z"
+          />
+        </svg>
+      </button>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <div class="search-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.073-5.816c0-5.14-4.226-9.28-9.403-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.403 3.274 7.403 7.28-3.298 7.279-7.403 7.279-7.407-3.273-7.407-7.28z"
+            />
+          </svg>
+        </div>
+        <input
+          class="search-input"
+          type="text"
+          placeholder="What do you want to play?"
+        />
+        <div class="divider-icon"></div>
+        <div class="browse-icon" title="Browse">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v4H4V2zm0 6h16v4H4V8zm0 6h16v4H4v-4zm0 6h16v2H4v-2z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+      <div class="nav-right">
+        <a class="nav-link">Premium</a>
+        <a class="nav-link">Support</a>
+        <a class="nav-link">Download</a>
+        <div class="nav-separator"></div>
+        <a class="install-link">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 12a8 8 0 1 1 16 0 8 8 0 0 1-16 0zm8-10C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 4a1 1 0 0 1 1 1v5.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 1.414-1.414L11 12.586V7a1 1 0 0 1 1-1z"
+            />
+          </svg>
+          Install App
+        </a>
+        <button class="signup-btn">Sign up</button>
+        <button class="login-btn">Log in</button>
+      </div>
+    </nav>
+
+    <div class="main">
+      <!-- left side -->
+
+      <div class="sidebar">
+        <!-- Header -->
+        <div class="sidebar-header">
+          <span class="sidebar-title">Your Library</span>
+          <button class="create-btn">
+            <span class="plus-icon">+</span>
+            Create
+          </button>
+        </div>
+
+        <!-- Cards -->
+        <div class="cards-area">
+          <div class="library-card">
+            <div class="card-title">Create your first playlist</div>
+            <div class="card-subtitle">It's easy, we'll help you</div>
+            <button class="card-btn">Create playlist</button>
+          </div>
+
+          <div class="library-card">
+            <div class="card-title">Let's find some podcasts to follow</div>
+            <div class="card-subtitle">
+              We'll keep you updated on new episodes
+            </div>
+            <button class="card-btn">Browse podcasts</button>
+          </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <!-- Footer -->
+        <div class="sidebar-footer">
+          <div class="footer-links">
+            <a class="footer-link">Legal</a>
+            <a class="footer-link">Safety &amp; Privacy Center</a>
+            <a class="footer-link">Privacy Policy</a>
+            <a class="footer-link">Cookies</a>
+            <a class="footer-link">About Ads</a>
+            <a class="footer-link">Accessibility</a>
+          </div>
+          <div class="footer-cookies">Cookies</div>
+          <button class="lang-btn">
+            <img
+              src="./Assets/Images/globe-svgrepo-com.svg"
+              alt="Globe Icon"
+              class="globe-icon"
+            />
+            English
+          </button>
+        </div>
+      </div>
+
+      <!-- ══════════ TRENDING SONGS ══════════ -->
+      <div class="right">
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">Trending songs</span>
+            <a class="show-all">Show all</a>
+          </div>
+
+          <div class="cards-row">
+            <!-- Mashooqa -->
+            <div class="song-card" data-index="0">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-1.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">
+                <span class="explicit">E</span>Mashooqa - From “Cocktail 2”
+              </div>
+              <div class="song-artists">
+                <a href="">Pritam</a>, <a href="">Mahmood</a>,
+                <a href="">Amitabh Bhattacharya</a>
+              </div>
+            </div>
+
+            <!-- Broken -->
+            <div class="song-card" data-index="1">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-2.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">Broken</div>
+              <div class="song-artists"><a href="">Shubh</a></div>
+            </div>
+
+            <!-- Khasara -->
+            <div class="song-card" data-index="2">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-3.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">Khasara</div>
+              <div class="song-artists">
+                <a href="">Abdul Hannan</a>, <a href="">Samar Jafri</a>
+              </div>
+            </div>
+
+            <!-- On The Floor -->
+            <div class="song-card" data-index="3">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-4.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">On The Floor</div>
+              <div class="song-artists">
+                <a href="">Jennifer Lopez</a>, <a href="">Pitbull</a>
+              </div>
+            </div>
+
+            <!-- Sadi Sun -->
+            <div class="song-card" data-index="4">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-5.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">Sadi Sun</div>
+              <div class="song-artists"><a href="">Harsh Nussi</a></div>
+            </div>
+
+            <!-- Har Baar -->
+            <div class="song-card" data-index="5">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-6.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">Har Baar</div>
+              <div class="song-artists">
+                <a href="">Murtaza Qizilbash</a>, <a href="">Samar Jafri</a>
+              </div>
+            </div>
+            <!-- Kami -->
+            <div class="song-card" data-index="6">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Poster-7.jpg" alt="" />
+                </div>
+              </div>
+              <div class="song-name">Kami</div>
+              <div class="song-artists"><a href="">Samar Jafri</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════ POPULAR ARTISTS ══════════ -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">Popular artists</span>
+            <a class="show-all">Show all</a>
+          </div>
+
+          <div class="cards-row">
+            <!-- Pritam -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-1"></div>
+              </div>
+              <div class="artist-name">Pritam</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Afusic -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-2"></div>
+              </div>
+              <div class="artist-name">Afusic</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Atif Aslam -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-3"></div>
+              </div>
+              <div class="artist-name">Atif Aslam</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Shubh -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-4"></div>
+              </div>
+              <div class="artist-name">Shubh</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Anuv Jain -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-5"></div>
+              </div>
+              <div class="artist-name">Anuv Jain</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Maanu -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-6"></div>
+              </div>
+              <div class="artist-name">Maanu</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- Arijit Singh -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-7"></div>
+              </div>
+              <div class="artist-name">Arijit Singh</div>
+              <div class="artist-type">Artist</div>
+            </div>
+
+            <!-- AP Dhillon -->
+            <div class="artist-card">
+              <div class="card-thumb">
+                <div class="artist-img Artist-8"></div>
+              </div>
+              <div class="artist-name">AP Dhillon</div>
+              <div class="artist-type">Artist</div>
+            </div>
+          </div>
+        </div>
+        <!-- ══════════ POPULAR ALBUMS & SINGLES ══════════ -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">Popular albums and singles</span>
+            <a class="show-all">Show all</a>
+          </div>
+  
+          <div class="cards-row">
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-1.jpg" alt="Popular Album 1" />
+                </div>
+              </div>
+              <div class="album-name">Pal Pal</div>
+              <div class="album-artist">Afusic, AliSoomroMusic</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-2.jpg" alt="Popular Album 2" />
+                </div>
+              </div>
+              <div class="album-name">Sicario</div>
+              <div class="album-artist">Shubh</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-3.jpg" alt="Popular Album 3" />
+                </div>
+              </div>
+              <div class="album-name">Jhol</div>
+              <div class="album-artist">Maanu, Annural Khalid</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-4.jpg" alt="Popular Album 4" />
+                </div>
+              </div>
+              <div class="album-name">Safar</div>
+              <div class="album-artist">Bayaan</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-5.jpg" alt="Popular Album 5" />
+                </div>
+              </div>
+              <div class="album-name">Afsos</div>
+              <div class="album-artist">Anuv Jain, AP Dhillon</div>
+            </div>
+  
+            <div class="album-card">
+                <div class="card-thumb">
+                  <div class="poster">
+                    <img src="/Assets/Images/Popular-6.jpg" alt="Popular Album 6" />
+                  </div>
+                </div>
+              <div class="album-name">My Terrible Mind</div>
+              <div class="album-artist">Talha Anjum, Umair</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-7.jpg" alt="Popular Album 7" />
+                </div>
+              </div>
+              <div class="album-name">Pal Pal (with Talwiinder)</div>
+              <div class="album-artist">Afusic, Talwiinder, AliSoomroMusic</div>
+            </div>
+  
+            <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Popular-8.jpg" alt="Popular Album 8" />
+                </div>
+              </div>
+              <div class="album-name">Making Mem…</div>
+              <div class="album-artist">Karan Aujla, Ik…</div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- ══════════ POPULAR RADIO ══════════ -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-title">Popular radio</span>
+            <a class="show-all">Show all</a>
+          </div>
+  
+          <div class="cards-row">
+            <!-- Arijit Singh -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (4).jpg" alt="Arijit Singh Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Jeet Gannguli,<br>Pritam, Shaarib Toshi and more<br></div>
+            </div>
+  
+            <!-- Shubh -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (3).jpg" alt="Shubh Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Cheema Y, AP Dhillon,<br>Navaan Sandhu and more</div>
+            </div>
+  
+            <!-- Talwiinder -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (5).jpg" alt="Talwiinder Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Shubh, Karan Aujla,<br>Push Kahlon and more</div>
+            </div>
+  
+            <!-- Diljit Dosanjh -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (2).jpg" alt="Diljit Dosanjh Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Shubh, AP Dhillon,<br>Sidhu Moose Wala and more</div>
+            </div>
+  
+            <!-- Sidhu Moose Wala -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (1).jpg" alt="Sidhu Moose Wala Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Shubh, Big Boi<br>Deep, Prem Dhillon and more</div>
+            </div>
+  
+            <!-- Talha Anjum -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio.jpg" alt="Talha Anjum Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Jokhay, Young<br>Stunners, Talhah Yunus and more</div>
+            </div>
+  
+            <!-- AP Dhillon -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (6).jpg" alt="AP Dhillon Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Karan Aujla, Shubh,<br>Gurinder Gill and more</div>
+            </div>
+  
+            <!-- Karan Aujla -->
+                        <div class="album-card">
+              <div class="card-thumb">
+                <div class="poster">
+                  <img src="/Assets/Images/Radio (7).jpg" alt="Karan Aujla Radio" />
+                </div>
+              </div>
+              <div class="album-artist">With Shubh, AP Dhillon,<br>Guru Randhawa and more</div>
+            </div>
+          </div>
+        </div>
+
+
+        <main>
+  <div class="section-header">
+    <h2>Featured Charts</h2>
+    <a href="#" class="show-all">Show all</a>
+  </div>
+ 
+  <div class="cards">
+ 
+    <!-- Card 1: Top Songs Global -->
+    <div class="card">
+      <div class="card-thumb">
+        <div class="art-tsg">
+          <div class="sp-logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            spotify
+          </div>
+          <div>
+            <div class="art-card-title">Top<br>Songs<br>Global</div>
+          </div>
+          <div class="art-badge">
+            <svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"/></svg>
+            Weekly Music Charts
+          </div>
+        </div>
+      </div>
+      <div class="card-desc">Your weekly update of the most played tracks…</div>
+    </div>
+ 
+    <!-- Card 2: Top Songs Pakistan -->
+    <div class="card">
+      <div class="card-thumb">
+        <div class="art-tsp">
+          <div class="sp-logo">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            spotify
+          </div>
+          <div>
+            <div class="art-card-title">Top<br>Songs<br>Pakistan</div>
+          </div>
+          <div class="art-badge">
+            <svg viewBox="0 0 24 24"><path d="M4 17l6-6 4 4 6-8"/></svg>
+            Weekly Music Charts
+          </div>
+        </div>
+      </div>
+      <div class="card-desc">Your weekly update of the most played tracks…</div>
+    </div>
+ 
+    <!-- Card 3: Top 50 Global -->
+    <div class="card">
+      <div class="card-thumb">
+        <div class="art-t50g">
+          <div class="sp-logo" style="position:absolute;top:14px;left:14px;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            spotify
+          </div>
+          <div class="art-50-number">Top<br>50</div>
+          <div class="art-50-sub">Global</div>
+          <div class="art-50-country" style="height:0"></div>
+        </div>
+      </div>
+      <div class="card-desc">Your daily update of the most played tracks righ…</div>
+    </div>
+ 
+    <!-- Card 4: Top 50 Pakistan -->
+    <div class="card">
+      <div class="card-thumb">
+        <div class="art-t50p" style="position:relative;">
+          <div class="sp-logo" style="position:absolute;top:14px;left:14px;">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            spotify
+          </div>
+          <div class="art-50-number" style="color:#fff;">Top<br>50</div>
+          <div class="art-50-sub" style="border-color:rgba(255,255,255,0.5);color:rgba(255,255,255,0.9);">Pakistan</div>
+        </div>
+      </div>
+      <div class="card-desc">Your daily update of the most played tracks righ…</div>
+    </div>
+ 
+  </div>
+</main>
+ 
+<hr class="divider">
+ 
+<footer>
+  <div class="footer-cols">
+ 
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">For the Record</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Communities</h4>
+      <ul>
+        <li><a href="#">For Artists</a></li>
+        <li><a href="#">Developers</a></li>
+        <li><a href="#">Advertising</a></li>
+        <li><a href="#">Investors</a></li>
+        <li><a href="#">Vendors</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Useful Links</h4>
+      <ul>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Free Mobile App</a></li>
+        <li><a href="#">Popular by Country</a></li>
+        <li><a href="#">Import your music</a></li>
+      </ul>
+    </div>
+ 
+    <div class="footer-col">
+      <h4>Spotify Plans</h4>
+      <ul>
+        <li><a href="#">Premium Individual</a></li>
+        <li><a href="#">Premium Duo</a></li>
+        <li><a href="#">Premium Family</a></li>
+        <li><a href="#">Premium Student</a></li>
+        <li><a href="#">Spotify Free</a></li>
+      </ul>
+    </div>
+ 
+    <!-- Social Icons -->
+    <div class="social-icons">
+      <!-- Instagram -->
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <!-- Twitter / X -->
+      <a href="#" class="social-icon" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+      <!-- Facebook -->
+      <a href="#" class="social-icon" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+      </a>
+    </div>
+ 
+  </div>
+ 
+  <div class="footer-bottom">
+    <p>© 2026 Spotify AB</p>
+    <div class="footer-legal">
+      <a href="#">Legal</a>
+      <a href="#">Safety & Privacy Center</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookies</a>
+      <a href="#">About Ads</a>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+      </div>
+    </div>
+
+    <div class="playbar">
+
+    <!-- Left -->
+    <div class="song-info">
+      <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="song">
+
+      <div class="song-text">
+        <h4>Ae Dil Hai Mushkil Title Track</h4>
+        <p>Pritam, Arijit Singh</p>
+      </div>
+
+      <button class="add-btn">+</button>
+    </div>
+    <!-- Center -->
+    <div class="player-center">
+      <div class="controls">
+        <button class="back-btn"><img src="/Assets/Images/back.svg" alt="Back-button"></button>
+
+        <button class="play-btn"><img src="/Assets/Images/play-circle-svgrepo-com.svg" alt=""></button>
+
+        <button class=" forward-btn"><img src="/Assets/Images/Forword.svg" alt="Forward-button"></button>
+      </div>
+
+      <div class="progress-area">
+        <span>1:09</span>
+
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+
+        <span>4:29</span>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div class="player-right">
+      <button class="volume-btn"><img src="/Assets/Images/volume.svg" alt="Volume"></button>
+
+      <div class="volume-bar">
+        <div class="volume"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
