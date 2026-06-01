@@ -24,6 +24,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
+  padding-bottom: 110px;
   background: var(--bg);
 }
 
@@ -36,6 +37,23 @@ nav {
   padding: 0 24px;
   gap: 12px;
   position: relative;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  min-width: 0;
+}
+
+.search-input {
+  min-width: 0;
+}
+
+.nav-right {
+  min-width: 0;
+}
+
+.right {
+  min-width: 0;
 }
 
 /* Spotify Logo */
@@ -480,6 +498,12 @@ nav {
 }
 
 @media (max-width: 980px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .sidebar {
     position: static;
     width: 100%;
@@ -491,6 +515,147 @@ nav {
   .right {
     margin-left: 0;
     width: 100%;
+    padding: 18px;
+  }
+
+  nav {
+    height: auto;
+    align-items: stretch;
+    padding: 12px 18px;
+  }
+
+  .search-container {
+    flex: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .nav-right {
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .nav-link,
+  .install-link,
+  .signup-btn,
+  .login-btn {
+    white-space: nowrap;
+  }
+
+  .cards-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  nav {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .home-btn {
+    flex-shrink: 0;
+  }
+
+  .search-container {
+    padding: 0 12px;
+    height: 44px;
+  }
+
+  .search-input {
+    font-size: 13px;
+  }
+
+  .nav-right {
+    justify-content: space-between;
+  }
+
+  .sidebar {
+    padding: 0 0 20px;
+  }
+
+  .cards-area {
+    padding: 0 10px;
+  }
+
+  .right {
+    padding: 16px;
+  }
+
+  .playbar {
+    width: 100%;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    padding: 0 12px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-left: none;
+  }
+
+  .player-center,
+  .song-info,
+  .player-right {
+    width: 100%;
+  }
+
+  .player-center {
+    align-items: stretch;
+  }
+
+  .controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .progress-area {
+    gap: 8px;
+  }
+
+  .player-right {
+    justify-content: space-between;
+    padding-bottom: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  nav {
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .search-container {
+    height: 42px;
+  }
+
+  .nav-right {
+    justify-content: flex-start;
+    gap: 6px;
+  }
+
+  .install-link,
+  .signup-btn,
+  .login-btn {
+    display: none;
+  }
+
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 }
 
