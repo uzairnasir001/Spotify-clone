@@ -40,7 +40,17 @@ let songs = [
     artist: "Samar Jafri",
     file: "Assets/Music/Kami (Official Visualiser) - Samar Jafri(MP3_160K).mp3",
     cover: "/Assets/Images/Poster-7.jpg"
+  },
+  {
+    title: "EL CONTROL (Ultra Slowed)",
+    artist: " M4GN",
+    file: "Assets/Music/EL CONTROL Ultra Slowed.mp3",
+    cover: "/Assets/Images/Poster-8.jpg"
   }
 ];
+
+
+
+
 
 

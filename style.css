@@ -541,8 +541,63 @@ nav {
   display: none;
 }
 
-/* ── Song Card ── */
+.cards-carousel {
+  position: relative;
+}
+
+.cards-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.cards-row::-webkit-scrollbar {
+  display: none;
+}
+
+.cards-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 1;
+}
+
+.cards-nav:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.cards-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.cards-prev {
+  left: -14px;
+}
+
+.cards-next {
+  right: -14px;
+}
+
 .song-card {
+  scroll-snap-align: start;
   display: flex;
   align-items: center;
   cursor: pointer;

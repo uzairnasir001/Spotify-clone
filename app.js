@@ -1,4 +1,7 @@
 let container = document.querySelector(".cards-row");
+const prevButton = document.querySelector(".cards-prev");
+const nextButton = document.querySelector(".cards-next");
+const CARD_SCROLL_GAP = 16;
 
 function renderSongs() {
   container.innerHTML = ""; // clear existing UI
@@ -29,7 +32,28 @@ function renderSongs() {
   });
 }
 
+function updateNavButtons() {
+  const maxScroll = container.scrollWidth - container.clientWidth;
+  prevButton.disabled = container.scrollLeft <= 8;
+  nextButton.disabled = container.scrollLeft >= maxScroll - 8;
+}
+
+function scrollCards(direction) {
+  const firstCard = container.querySelector('.song-card');
+  if (!firstCard) return;
+
+  const scrollAmount = firstCard.offsetWidth + CARD_SCROLL_GAP;
+  const delta = direction === 'next' ? scrollAmount : -scrollAmount;
+
+  container.scrollBy({ left: delta, behavior: 'smooth' });
+}
+
+prevButton.addEventListener('click', () => scrollCards('prev'));
+nextButton.addEventListener('click', () => scrollCards('next'));
+container.addEventListener('scroll', updateNavButtons);
+
 renderSongs();
+updateNavButtons();
 
 
 container.addEventListener("click", (e) => {
