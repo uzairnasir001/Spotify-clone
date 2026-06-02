@@ -46,6 +46,12 @@ let songs = [
     artist: " M4GN",
     file: "Assets/Music/EL CONTROL Ultra Slowed.mp3",
     cover: "/Assets/Images/Poster-8.jpg"
+  },
+  {
+    title: "Ishq",
+    artist: "Faheem Abdullah",
+    file: "Assets/Music/Ishq Official Lyrical Video I Amir Ameer Faheem Abdullah Rauhan Malik I Love Song 2024.mp3",
+    cover: "/Assets/Images/Poster-9.jpg"
   }
 ];
 
