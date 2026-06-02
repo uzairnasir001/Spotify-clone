@@ -1247,3 +1247,50 @@ nav {
   background: white;
 }
 
+
+@media (max-width: 720px) {
+  .playbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    /* max-width: calc(100% - 32px); */
+    height: auto;
+    min-height: 90px;
+    background: #000;
+    border-top: 1px solid #282828;
+    border-left: 1px solid #282828;
+    z-index: 999;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .playbar .song-info,
+  .playbar .player-center,
+  .playbar .player-right {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .playbar .song-info {
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .playbar .player-center {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .playbar .progress-area {
+    width: 100%;
+  }
+}

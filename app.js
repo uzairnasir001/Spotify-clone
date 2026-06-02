@@ -3,6 +3,7 @@ const prevButton = document.querySelector(".cards-prev");
 const nextButton = document.querySelector(".cards-next");
 const backButton = document.querySelector(".back-btn");
 const playButton = document.querySelector(".play-btn");
+const playButtonImage = playButton?.querySelector('img');
 const forwardButton = document.querySelector(".forward-btn");
 const volumeButton = document.querySelector(".volume-btn");
 const volumeBar = document.querySelector(".volume-bar");
@@ -11,7 +12,8 @@ const progressBar = document.querySelector(".progress-bar");
 const progressFill = document.querySelector(".progress");
 const progressTimes = document.querySelectorAll(".progress-area span");
 const CARD_SCROLL_GAP = 16;
-const playIconHTML = playButton.innerHTML;
+const playIconSrc = playButtonImage?.getAttribute('src') || '/Assets/Images/play-circle-svgrepo-com.svg';
+const pauseIconSrc = '/Assets/Images/pause-svgrepo-com.svg';
 const audio = new Audio();
 let currentSong = 0;
 let lastVolume = 0.7;
@@ -84,13 +86,15 @@ function updateVolumeUI() {
 }
 
 function setPlayState(isPlaying) {
-  if (isPlaying) {
-    playButton.innerHTML = '❚❚';
-    playButton.setAttribute('aria-label', 'Pause');
+  if (playButtonImage) {
+    playButtonImage.setAttribute('src', isPlaying ? pauseIconSrc : playIconSrc);
+  } else if (isPlaying) {
+    playButton.innerHTML = `<img src="${pauseIconSrc}" alt="Pause">`;
   } else {
-    playButton.innerHTML = playIconHTML;
-    playButton.setAttribute('aria-label', 'Play');
+    playButton.innerHTML = `<img src="${playIconSrc}" alt="Play">`;
   }
+
+  playButton.setAttribute('aria-label', isPlaying ? 'Pause' : 'Play');
 }
 
 function playSong(index) {
